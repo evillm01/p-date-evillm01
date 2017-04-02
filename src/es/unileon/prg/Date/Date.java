@@ -12,86 +12,80 @@ public class Date{
 	private int _year;
 
 	
-	public Date(){
-		int day=_day;
-		int month=_month;
-		int year=_year;
+	public Date(int day,int month,int year){
+		_day=day;
+		_month=month;
+		_year=year;
 	}
 
 	
-	public boolean isSameYear(Date year1){
-		if(year1==_year){
+	public boolean isSameYear(Date anotherDate){
+		if(anotherDate.getYear()==_year){
 			return true;
-			System.out.println("Es el mismo año");
-		}else{
-			return false;
-			System.out.println("No es el mismo año");
+			
 		}
+			return false;
+			
 	}
-	public boolean isSameMonth(Date month1){
-		if(month1==_month){
+	public boolean isSameMonth(Date anotherDate){
+		if(anotherDate.getMonth()==_month){
 			return true;
-			System.out.println("Es el mismo mes");
-		}else{
-			return false;
-			System.out.println("No es el mismo mes");
+			
 		}
+			return false;
+			
 	}
-	public boolean isSameDay(Date day1){
-		if(day1==_day){
+	public boolean isSameDay(Date anotherDate){
+		if(anotherDate.getDay()==_day){
 			return true;
-			System.out.println("Es el mismo dia");
-		}else{
-			return false;
-			System.out.println("No es el mismo dia");
+			
 		}
+			return false;
+			
 	}
-	public boolean isSame(Date day1,Date month1,Date year1){
-		
+	public boolean isSame(Date anotherDate){
+		if(isSameYear(anotherDate) && isSameMonth(anotherDate) && isSameDay(anotherDate)){
+			return true;
+		}
+		return false;
 	}
 
-	public void printMonth(int month){
-		System.out.println("El mes es: "+month);
+	public void printMonth(int mes){
+		month=mes;
+		return month;
+	}
+
+	public void printDate(int day,int month,int year){
+		System.out.println("La fecha es: "+day+"."+month+"."+year);
 	}
 
 	public boolean check(){
 		if(day==0){
 			return true;
-			System.out.println("El dia del mes es correcto");
-		}else{
-			return false;
-			System.out.println("El dia del mes es incorrecto");
+			
 		}
+			return false;
+			
 	}
 	
 	public void season(int month){
-		switch(month){
-		case 01: System.out.println("La estacion es Invierno");
-			break;
-		case 02: System.out.println("La estacion es Invierno");
-			break;
-		case 03: System.out.println("La estacion es Primavera");
-			break;
-		case 04: System.out.println("La estacion es Primavera");
-			break;
-		case 05: System.out.println("La estacion es Primavera");
-			break;
-		case 06: System.out.println("La estacion es Verano");
-			break;	
-		case 07: System.out.println("La estacion es Verano");
-			break;
-		case 08: System.out.println("La estacion es Verano");
-			break;	
-		case 09: System.out.println("La estacion es Otoño");
-			break;
-		case 10: System.out.println("La estacion es Otoño");
-			break;
-		case 11: System.out.println("La estacion es Otoño");
-			break;
-		case 12: System.out.println("La estacion es Invierno");
-			break;
-		}
+		
+	String p = "Primavera";
+	String v = "Verano";
+	String o = "Otoño";
+	String i = "Invierno";
+	
+		if(month==12||month==1||month==2){
+			return i;
+		}else if(month==3||month==4||month==5){
+			return p;
+		}else if(month==6||month==7||month==8){
+			return v;
+		}else{
+			return o;
 	}
+
+ 
 
 	public int getDay(){
 		return _day;
